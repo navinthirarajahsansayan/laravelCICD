@@ -12,11 +12,19 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
+        
+      - name: Print SSH private key
+        run: echo "${{ secrets.SSH_PRIVATE_KEY }}"
+         
+      - name: Convert SSH private key format
+        run: echo "${{ secrets.SSH_PRIVATE_KEY }}" | sed 's/\\n/\n/g' > ssh_key.pem && chmod 400 ssh_key.pem
+
 
       - name: Set up SSH key
         uses: webfactory/ssh-agent@v0.5.0
         with:
-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+          ssh-private-key: ./ssh_key.pem
+
 
       - name: Install rsync
         run: sudo apt-get update && sudo apt-get install rsync -y
