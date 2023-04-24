@@ -13,7 +13,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDLE+/Utru+xcqFKsQ3/OLaad+h5MSTYjM5Cu5ecuNfijpv9yhZgQkJ//u0gnymDbfoRjP0Qxkh/opeLcsDRA7DmfrA3hi2fkYRcDH54+1md5RDDepb6hN6XNwqJ87Ryxv+V7y7rOxfgbGvJJ66TPcE+HAAAOujf4p7sI1aQjLbHkBphJi/E8N1NG8w8grBDeHMpU8Ou6fWuj6gTLz/kvg67LmywdJ3o33f9TOjl7rqb7JOONkiDkpkNcF8ZXJYRJPK443M/wpLocqgQa0aS2xV7Jvg89MRkkMXlMkRUNj92uuOw4V5hjTZJoFK5QYocQavqDOGoY7gJvRD2SY3v1fEajI72LAFbEt0+G1+TscCIsNXyqU30kqDfxpHrQGbAgq420+nARAAIT3rPBV63RKpt7zTZizqsEp4+EK3J4IkgI0ZXxzK7abkh9NNDz4WtojeUq1DuohEDxMHzSizFVbS9kPTI3alqPdD0v0C8lenVLTN7WbeoKc8nAn+9IPSOa8= laravel
+      - name: laraveldemo
         uses: webfactory/ssh-agent@v0.5.0
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
