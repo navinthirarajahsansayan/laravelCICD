@@ -28,8 +28,8 @@ jobs:
 
       - name: Deploy code to EC2 instance
         run: |
-          rsync -rav -e "ssh -o StrictHostKeyChecking=no" --exclude='.git/' --exclude='.github/' --exclude='.env' ./ ec2-user@<16.16.139.98>:  /var/www/html/laravelCICD/
-          ssh ec2-user@<16.16.139.98> "  /var/www/html/laravelCICD/ && sudo chown -R www-data:www-data storage bootstrap/cache && php artisan cache:clear && php artisan config:cache"
+          rsync -rav -e "ssh -o StrictHostKeyChecking=no" --exclude='.git/' --exclude='.github/' --exclude='.env' ./ ec2-user@<172.31.7.205>:  /var/www/html/laravelCICD/
+          ssh ec2-user@<172.31.7.205> "  /var/www/html/laravelCICD/ && sudo chown -R www-data:www-data storage bootstrap/cache && php artisan cache:clear && php artisan config:cache"
 
       - name: Send Slack notification
         if: ${{ job.status == 'success' }}
